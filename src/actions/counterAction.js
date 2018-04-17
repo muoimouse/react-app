@@ -1,4 +1,4 @@
-import { INCREASE } from '../constants/actionTypes';
+import { INCREASE } from '../constants/ActionTypes';
 
 export const counterIncrease = () => {
   return {

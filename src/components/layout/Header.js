@@ -2,11 +2,9 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.res/Header.css';
 import { connect } from 'react-redux';
-// import store from '../../store';
-import { INCREASE } from '../../constants/actionTypes';
-// import counter from '../../reducers/counterReducer';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
+import View from './View';
 
 // class NavItem extends React.Component<HeaderLink, HeaderLink> {
 //   constructor(props: HeaderLink) {
@@ -20,26 +18,11 @@ import * as actions from '../../actions';
 //   }
 // }
 
-class View extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    console.log(this.props.counter);
-    return (
-      <div>{this.props.counter}</div>
-    );
-  }
-}
-
 class Header extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  increment() {
-    this.props.dispatch({ type: INCREASE });
-  }
   render() {
     return (
       <div className="header-text">
@@ -56,23 +39,16 @@ class Header extends React.Component {
             <li className="presentation"><Link to="/"><i className="fab fa-github-square"/></Link></li>
             <li className="presentation"><Link to="/"><i className="fab fa-linkedin"/></Link></li>
           </ul>
-          <button className="btn" onClick={this.increment}>INSREASE</button>
-          <View/>
         </div>
+        <button onClick={this.props.counterIncrease}>Increase</button>
+        <View/>
       </div>
     );
   }
 }
 
 Header.propTypes = {
-  dispatch: PropTypes.node.isRequired
+  counterIncrease: PropTypes.func
 };
 
-function mapStateToProps(state) {
-  return {
-    count: state.count
-  };
-}
-
-connect (mapStateToProps, null)(View);
 export default connect(null, actions)(Header);

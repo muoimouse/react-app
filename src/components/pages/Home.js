@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../layout/App';
+import { listArticle } from '../../containers';
 
 class Post extends React.Component {
   render() {
@@ -55,9 +56,20 @@ class Content extends React.Component {
 }
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      listArticle: listArticle()
+    };
+  }
+
   render() {
+    console.log(this.state.listArticle)
     return (
       <Layout>
+        <div>
+          ahiha
+        </div>
         <Content/>
       </Layout>
     );
