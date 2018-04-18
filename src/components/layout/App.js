@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React     from 'react';
 import * as PropTypes from 'prop-types';
-import Header from './Header';
-import Footer from './Footer';
+import Header         from './Header';
+import Footer         from './Footer';
 
 class SearchWidget extends React.Component {
   render() {
