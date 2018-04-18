@@ -1,1 +1,3 @@
 export const INCREASE = 'increase';
+export const FETCH_ARTICLE_REQUEST = 'GET_LIST_ARTICLE';
+export const FETCH_ARTICLE_SUCCESS = 'FETCH_ARTICLE_SUCCESS';

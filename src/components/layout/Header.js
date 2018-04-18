@@ -4,7 +4,6 @@ import './Header.res/Header.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
-import View from './View';
 
 // class NavItem extends React.Component<HeaderLink, HeaderLink> {
 //   constructor(props: HeaderLink) {
@@ -29,19 +28,16 @@ class Header extends React.Component {
         <div className="col-lg-4 offset-lg-4">
           <img className="header-img" src="./mouse.jpg" alt=""/>
           <h1>Mouse</h1>
-          <hr/>
           <p>Software engineer, blogger at @Mouse</p>
         </div>
         <div className="menu-socials">
           <ul className="nav">
-            <li className="presentation"><Link to="/"><i className="fab fa-facebook"/></Link></li>
-            <li className="presentation"><Link to="/"><i className="fab fa-twitter"/></Link></li>
-            <li className="presentation"><Link to="/"><i className="fab fa-github-square"/></Link></li>
-            <li className="presentation"><Link to="/"><i className="fab fa-linkedin"/></Link></li>
+            <li className="presentation"><Link to="/"><i className="fa fa-facebook"/></Link></li>
+            <li className="presentation"><Link to="/"><i className="fa fa-twitter"/></Link></li>
+            <li className="presentation"><Link to="/"><i className="fa fa-github-square"/></Link></li>
+            <li className="presentation"><Link to="/"><i className="fa fa-linkedin"/></Link></li>
           </ul>
         </div>
-        <button onClick={this.props.counterIncrease}>Increase</button>
-        <View/>
       </div>
     );
   }

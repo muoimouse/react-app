@@ -12,7 +12,9 @@ class SearchWidget extends React.Component {
           <div className="input-group">
             <input type="text" className="form-control" placeholder="Search for..." />
             <span className="input-group-btn" />
-            <button className="btn btn-secondary" type="button" >Go!</button>
+            <button className="btn btn-info" type="button" >
+              <i className="fa fa-search" aria-hidden="true"/>
+            </button>
           </div>
         </div>
       </div>
@@ -84,21 +86,15 @@ class Widget extends React.Component {
 }
 
 class Layout extends React.Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  };
-
   render() {
     return (
       <div>
         <Header />
         <div className="container">
           <div className="row">
-            {/*Blog Entries Column*/}
             <div className="col-md-8">
               {this.props.children}
             </div>
-            {/*Sidebar Widgets Column*/}
             <div className="col-md-4">
               <Widget/>
             </div>
@@ -109,5 +105,9 @@ class Layout extends React.Component {
     );
   }
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Layout;
