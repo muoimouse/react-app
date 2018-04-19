@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../layout/App';
 import { listArticle } from '../../containers';
@@ -19,37 +19,29 @@ const Post = () => (
     </div>
     <div className="card-footer text-muted">
       Posted on January 1, 2017 by
-      <a href="#">Start Bootstrap</a>
+      <Link to="#">Start Bootstrap</Link>
     </div>
   </div>
 );
 
-class Pagination extends React.Component {
-  render() {
-    return (
-      <ul className="pagination justify-content-center mb-4">
-        <li className="page-item">
-          <Link className="page-link" to="#">&larr; Older</Link>
-        </li>
-        <li className="page-item disabled">
-          <Link className="page-link" to="#">Newer &rarr;</Link>
-        </li>
-      </ul>
-    );
-  }
-}
+const Pagination = () => (
+  <ul className="pagination justify-content-center mb-4">
+    <li className="page-item">
+      <Link className="page-link" to="#">&larr; Older</Link>
+    </li>
+    <li className="page-item disabled">
+      <Link className="page-link" to="#">Newer &rarr;</Link>
+    </li>
+  </ul>
+);
 
-class Content extends React.Component {
-  render() {
-    return (
-      <div>
-        <Post />
-        <Post />
-        <Pagination/>
-      </div>
-    );
-  }
-}
+const Content = () => (
+  <div>
+    <Post />
+    <Post />
+    <Pagination/>
+  </div>
+);
 
 class Home extends React.Component {
   constructor(props) {

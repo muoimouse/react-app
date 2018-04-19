@@ -12,3 +12,5 @@ export const fetchArticlesSuccess = (listArticle) => ({
   type: FETCH_ARTICLE_SUCCESS,
   listArticle
 });
+
+export const fetchArticles = ()
