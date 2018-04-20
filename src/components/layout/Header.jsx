@@ -1,44 +1,50 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-// import './Header.res/Header.css';
+// import { Link } from 'react-router-dom';
 import * as actions from '../../actions';
 
-const propTypes = {
-  genre: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  navigateTo: PropTypes.func.isRequired,
-};
+const Profile = () => (
+  <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav" >
+    <a className="navbar-brand js-scroll-trigger" href="./index.html">
+      <span className="d-block d-lg-none">Mouse</span>
+      <span className="d-none d-lg-block">
+        <img className="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="" />
+      </span>
+    </a>
 
-const defaultProps = {
-  genre: '',
-  genres: ['']
-};
+    <input className="search" type="text" placeholder=" search" />
 
-const NewHeader = () => (
-  <header className="blog-header py-3">
-        <div className="row flex-nowrap justify-content-between align-items-center">
-          <div className="col-4 pt-1">
-            <a className="text-muted" href="#">Subscribe</a>
-          </div>
-          <div className="col-4 text-center">
-            <a className="blog-header-logo text-dark" href="#">Large</a>
-          </div>
-          <div className="col-4 d-flex justify-content-end align-items-center">
-            <a className="text-muted" href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
-            </a>
-            <a className="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-          </div>
-        </div>
-      </header>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon" />
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <a className="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link js-scroll-trigger" href="#experience">Experience</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link js-scroll-trigger" href="#education">Education</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link js-scroll-trigger" href="#skills">Skills</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link js-scroll-trigger" href="#interests">Interests</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 );
+
 
 class Header extends PureComponent {
   render() {
     return (
-      <NewHeader />
+      <Profile />
     );
   }
 }

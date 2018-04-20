@@ -1,0 +1,307 @@
+body {
+  font-family: 'Roboto Slab', serif;
+  color: #333332;
+  line-height: 1.75rem;
+  font-size: 17px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 0;
+    padding-left: 17rem;
+  }
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: 'Saira Extra Condensed', serif;
+  font-size: 1.35rem;
+}
+
+.list-social-icons a {
+  color: #495057;
+}
+
+.list-social-icons a:hover {
+  color: #BD5D38;
+}
+
+.list-social-icons a .fa-lg {
+  font-size: 1.75rem;
+}
+.search {
+  border-radius: 2%;
+  border: 0;
+}
+
+.list-icons {
+  font-size: 3rem;
+}
+
+.list-icons .list-inline-item i:hover {
+  color: #BD5D38;
+}
+
+#sideNav .navbar-nav .nav-item .nav-link {
+  font-weight: 300;
+}
+
+@media (min-width: 992px) {
+  #sideNav {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    height: 100vh;
+  }
+  #sideNav .navbar-brand {
+    display: flex;
+    margin: auto auto 0;
+    padding: 0.5rem;
+  }
+  #sideNav .navbar-brand .img-profile {
+    max-width: 10rem;
+    max-height: 10rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+  }
+  #sideNav .navbar-collapse {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 0;
+    width: 100%;
+    margin-bottom: auto;
+  }
+  #sideNav .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+  #sideNav .navbar-collapse .navbar-nav .nav-item {
+    display: block;
+  }
+  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+    display: block;
+  }
+}
+
+section.resume-section {
+  border-bottom: 1px solid #dee2e6;
+  padding-top: 4rem !important;
+  padding-bottom: 0 !important;
+}
+
+section.resume-section .resume-item .resume-date {
+  min-width: none;
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh;
+  }
+  section.resume-section .resume-item .resume-date {
+    min-width: 18rem;
+  }
+}
+
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+.bg-primary {
+  background-color: #BD5D38 !important;
+}
+
+.text-primary {
+  color: #BD5D38 !important;
+}
+
+a {
+  color: #BD5D38;
+}
+
+a:hover, a:focus, a:active {
+  color: #824027;
+}
+
+
+section .the-post-content header a {
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #343a40;
+  text-decoration: none;
+}
+
+@media(max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+  section .the-post-content header a {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #343a40;
+  text-decoration: none;
+}
+  .post-container .card {
+    border-radius: 0%;
+    border-bottom: 0.01rem solid silver !important;
+  }
+
+  /* post */
+  .article header h1 {
+    font-size: 1.6rem !important;
+    font-weight: 300 !important;
+    padding-bottom: 0.5rem;
+  }
+
+  .article {
+    padding: 0 1rem !important;
+    line-height: 1.5rem !important;
+  }
+}
+
+.content {
+  background-image: url('../img/annie-spratt-271426-unsplash.jpg');
+  background-size: 900px;
+  background-attachment: fixed;
+  
+}
+
+.post-container {
+  background: white;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.post-container .card {
+  border: none;
+}
+.post-container img {
+  width: 320px;
+  height: 250px;
+}
+
+
+/* tag */
+.tag {
+    display: inline-block;
+    height: 21px;
+    margin: 0 0 0 5px;
+    padding: 0 7px 0 14px;
+    white-space: nowrap;
+    position: relative;
+ 
+    background: -moz-linear-gradient(top, #fed970 0%, #febc4a 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fed970), color-stop(100%,#febc4a));
+    background: -webkit-linear-gradient(top, #fed970 0%,#febc4a 100%);
+    background: -o-linear-gradient(top, #fed970 0%,#febc4a 100%);
+    background: linear-gradient(to bottom, #fed970 0%,#febc4a 100%);
+    background-color: #FEC95B;
+ 
+    color: #963;
+    font: bold 13px/21px Arial, Tahoma, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 1px rgba(255,255,255,0.4);
+ 
+    border-top: 1px solid #EDB14A;
+    border-bottom: 1px solid #CE922E;
+    border-right: 1px solid #DCA03B;
+    border-radius: 1px 3px 3px 1px;
+    box-shadow: inset 0 1px #FEE395, 0 1px 2px rgba(0,0,0,0.21);
+}
+.tag:before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -6px;
+    width: 10px;
+    height: 10px;
+ 
+    background: -moz-linear-gradient(45deg, #fed970 0%, #febc4a 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#fed970), color-stop(100%,#febc4a));
+    background: -webkit-linear-gradient(-45deg, #fed970 0%,#febc4a 100%);
+    background: -o-linear-gradient(45deg, #fed970 0%,#febc4a 100%);
+    background: linear-gradient(135deg, #fed970 0%,#febc4a 100%);
+    background-color: #FEC95B;
+ 
+    border-left: 1px solid #EDB14A;
+    border-bottom: 1px solid #CE922E;
+    border-radius: 0 0 0 2px;
+    box-shadow: inset 1px 0 #FEDB7C, 0 2px 2px -2px rgba(0,0,0,0.33);
+
+    -webkit-transform: scale(1, 1.5) rotate(45deg);
+    -moz-transform: scale(1, 1.5) rotate(45deg);
+    -ms-transform: scale(1, 1.5) rotate(45deg);
+    transform: scale(1, 1.5) rotate(45deg);
+}
+
+.tag:after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 1px;
+    width: 5px;
+    height: 5px;
+    background: #FFF;
+    border-radius: 4px;
+    border: 1px solid #DCA03B;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 1px 1px rgba(0,0,0,0.21);
+}
+
+.tag:hover {
+    color: #FFF;
+    text-shadow: -1px -1px 0 rgba(153,102,51,0.3);
+    text-decoration: none;
+}
+
+.entry-meta a {
+  padding: 2px;
+}
+
+section .card-body {
+  padding-top: 0;
+}
+
+
+/* post css */
+.article header h1 {
+  font-weight: 700;
+  color: black;
+  font-size: 2.6rem;
+}
+
+.article header {
+  padding-bottom: 1rem;
+}
+
+.article {
+  padding: 0 8rem;
+  line-height: 2rem;
+}
+
+section .suggest  img{
+  width: 160px;
+  height: 120px;
+}
+
+section .suggest .title {
+  font-size: 24px;
+}
+
+.suggest .card-text{
+  font-size: 13px !important;
+}
+
+.suggest-title {
+  padding: 0.25rem;
+}
+
+
+/* commetn/ */
+.comment .card {
+  border: 1px solid rgba(0,0,0,.08);
+}

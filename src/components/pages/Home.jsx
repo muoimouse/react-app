@@ -1,64 +1,63 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom';
 import Layout from '../layout/App';
-import { listArticle } from '../../containers';
+// import { listArticle } from '../../containers';
 
 const Post = () => (
-  <div className="card mb-4">
-    <image className="card-img-top" src="http://placehold.it/750x300" alt="Card image cap" />
-    <div className="card-body">
-      <h2 className="card-title">Post Title</h2>
-      <p className="card-text">
-        Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit. Reiciendis aliquid atque, nulla?
-        Quos cum ex quis soluta, a laboriosam.
-        Dicta expedita corporis animi vero voluptate voluptatibus possimus,
-        veniam magni quis!
-      </p>
-      <Link to="/post" className="btn btn-primary">Read More &rarr;</Link>
-    </div>
-    <div className="card-footer text-muted">
-      Posted on January 1, 2017 by
-      <Link to="#">Start Bootstrap</Link>
-    </div>
+  <div className="card flex-md-row mb-1 box-shadow h-md-250">
+    <img className="card-img-right flex-auto d-none d-lg-block" src="./img/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" />
+      <div className="card-body d-flex flex-column align-items-start">
+        <h3 className="mb-0">
+          <a className="text-dark" href="#">Featured post</a>
+        </h3>
+        <div className="mb-1 text-muted">
+          <span>November 07, 2016</span>
+        </div>
+        <p className="card-text mb-auto">This is a wider card with supporting text below as a natural
+          lead-in to additional content.</p>
+        <a href="./post.html">Continue reading</a>
+        <div className="entry-meta">
+          <a href="" className="fa fa-user"> Mouse</a>
+          <a href="" className="fa fa-folder-open"> JavaScript</a>
+          <a href="" className="fa fa-comment"> 8 phản hồi</a>
+          <a href="" className="fa fa-clock-o"> 04/20/2018</a>
+        </div>
+      </div>
   </div>
 );
 
-const Pagination = () => (
-  <ul className="pagination justify-content-center mb-4">
-    <li className="page-item">
-      <Link className="page-link" to="#">&larr; Older</Link>
-    </li>
-    <li className="page-item disabled">
-      <Link className="page-link" to="#">Newer &rarr;</Link>
-    </li>
-  </ul>
-);
-
-const Content = () => (
-  <div>
-    <Post />
-    <Post />
-    <Pagination/>
-  </div>
-);
-
-class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      listArticle: listArticle()
-    };
-  }
-
+class Content extends Component{
   render() {
-    console.log(this.state.listArticle)
+    return (
+      <div className="content container-fluid p-0">
+        <div className="post-container col-sm-8">
+          <section className="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+            <div className=" container-fluid">
+              <div className="row">
+                <div className="col-sm-12">
+                  {this.props.children}
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    );
+  }
+}
+
+Content.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+class Home extends Component {
+  render() {
     return (
       <Layout>
-        <div>
-          ahiha
-        </div>
-        <Content/>
+        <Content>
+          <Post />
+        </Content>
       </Layout>
     );
   }
