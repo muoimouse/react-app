@@ -30,9 +30,18 @@ body {
 .list-social-icons a .fa-lg {
   font-size: 1.75rem;
 }
+
 .search {
-  border-radius: 2%;
-  border: 0;
+  width: 100%;
+  background: #f7f7f7;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .list-icons {
@@ -142,11 +151,20 @@ section .the-post-content header a {
     font-size: 1rem;
   }
   section .the-post-content header a {
-  font-weight: 600;
-  font-size: 1.6rem;
-  color: #343a40;
-  text-decoration: none;
-}
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #343a40;
+    text-decoration: none;
+
+  }
+
+  .search input#search {
+    display: none !important;
+  }
+  section .card-body {
+    padding: 1.5rem 0 !important;
+  }
+
   .post-container .card {
     border-radius: 0%;
     border-bottom: 0.01rem solid silver !important;
@@ -239,6 +257,10 @@ section .the-post-content header a {
     transform: scale(1, 1.5) rotate(45deg);
 }
 
+.tags a {
+  margin-left: 10px;
+}
+
 .tag:after {
     content: '';
     position: absolute;
@@ -300,8 +322,6 @@ section .suggest .title {
   padding: 0.25rem;
 }
 
-
-/* commetn/ */
-.comment .card {
-  border: 1px solid rgba(0,0,0,.08);
+.article-navigation .article-navigation-right{
+  float: right;
 }

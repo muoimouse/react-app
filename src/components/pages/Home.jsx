@@ -16,7 +16,7 @@ const Post = () => (
         </div>
         <p className="card-text mb-auto">This is a wider card with supporting text below as a natural
           lead-in to additional content.</p>
-        <a href="./post.html">Continue reading</a>
+        <a href="./post">Continue reading</a>
         <div className="entry-meta">
           <a href="" className="fa fa-user"> Mouse</a>
           <a href="" className="fa fa-folder-open"> JavaScript</a>
@@ -27,40 +27,31 @@ const Post = () => (
   </div>
 );
 
-class Content extends Component{
-  render() {
-    return (
-      <div className="content container-fluid p-0">
-        <div className="post-container col-sm-8">
-          <section className="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-            <div className=" container-fluid">
-              <div className="row">
-                <div className="col-sm-12">
-                  {this.props.children}
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    );
-  }
-}
-
-Content.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+const HomeContent = props => (
+  <div className="col-sm-12">
+    {props.children}
+  </div>
+);
 
 class Home extends Component {
   render() {
     return (
       <Layout>
-        <Content>
+        <HomeContent>
           <Post />
-        </Content>
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+        </HomeContent>
       </Layout>
     );
   }
 }
+
+HomeContent.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Home;
