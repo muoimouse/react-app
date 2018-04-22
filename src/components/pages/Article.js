@@ -71,49 +71,43 @@ const Navigation = () => (
   </div>
 );
 
-const Suggest = () => (
+const Suggest = (props) => (
   <div className="suggest col-sm-12">
     <p>Bài viết hay</p>
     <div className="row">
-      <div className="col-sm-6 card flex-md-row mb-1 box-shadow h-md-250">
-        <img className="card-img-right flex-auto d-none d-lg-block"
-             src="./img/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" />
-          <div className="card-body d-flex flex-column align-items-start">
-            <h3 className="title">
-              <a className="text-dark" href="#">Featured post</a>
-            </h3>
-            <p className="card-text mb-auto ">This is a wider card with supporting text below as a natural lead-in to
-              additional content.</p>
-          </div>
-      </div>
-
-      <div className="col-sm-6 card flex-md-row mb-1 box-shadow h-md-250">
-        <img className="card-img-right flex-auto d-none d-lg-block"
-             src="./img/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" />
-          <div className="card-body d-flex flex-column align-items-start">
-            <h3 className="title">
-              <a className="text-dark" href="#">Featured post</a>
-            </h3>
-            <p className="card-text mb-auto ">This is a wider card with supporting text below as a natural lead-in to
-              additional content.</p>
-          </div>
-      </div>
-      <div className="col-sm-6 card flex-md-row mb-1 box-shadow h-md-250">
-        <img className="card-img-right flex-auto d-none d-lg-block"
-             src="./img/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" />
-          <div className="card-body d-flex flex-column align-items-start">
-            <h3 className="title">
-              <a className="text-dark" href="#">Featured post</a>
-            </h3>
-            <p className="card-text mb-auto ">This is a wider card with supporting text below as a natural lead-in to
-              additional content.</p>
-          </div>
-      </div>
-
+      {props.children}
     </div>
 
   </div>
 );
+
+Suggest.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+const SuggestItem = (props) => (
+  <div className="col-sm-6 card flex-md-row mb-1 box-shadow h-md-250">
+    <div className="row">
+      <div className="col-sm-4" style={props.resizePadding}>
+        <img className="card-img-right flex-auto d-none d-lg-block"
+             src="./img/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" />
+      </div>
+      <div className="col-sm-8" style={props.resizePadding}>
+        <div className="card-body d-flex flex-column align-items-start">
+          <h3 className="title">
+            <a className="text-dark" href="#">Featured post</a>
+          </h3>
+          <p className="card-text mb-auto ">This is a wider card with supporting text below as a natural lead-in to
+            additional content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+SuggestItem.propTypes = {
+  resizePadding: PropTypes.string.isRequired,
+};
 
 const FacebookComments = () => (
     <FacebookProvider appId="2077250975839277">
@@ -142,7 +136,12 @@ class Post extends React.Component {
         <Share />
         <Tag />
         <Navigation />
-        <Suggest />
+        <Suggest >
+          <SuggestItem resizePadding={{padding: 0}}/>
+          <SuggestItem resizePadding={{padding: 0}}/>
+          <SuggestItem resizePadding={{padding: 0}}/>
+          <SuggestItem resizePadding={{padding: 0}}/>
+        </Suggest>
         <ArticleContent>
           <FacebookComments />
         </ArticleContent>
