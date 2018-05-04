@@ -184,9 +184,10 @@ section .the-post-content header a {
 }
 
 .content {
-  background-image: url('../img/annie-spratt-271426-unsplash.jpg');
-  background-size: 900px;
-  background-attachment: fixed;
+  background: #4e555b;
+  /*background-image: url('../img/annie-spratt-271426-unsplash.jpg');*/
+  /*background-size: 900px;*/
+  /*background-attachment: fixed;*/
   
 }
 

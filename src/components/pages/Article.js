@@ -106,7 +106,7 @@ const SuggestItem = (props) => (
 );
 
 SuggestItem.propTypes = {
-  resizePadding: PropTypes.string.isRequired,
+  resizePadding: PropTypes.exact().isRequired,
 };
 
 const FacebookComments = () => (
@@ -128,7 +128,7 @@ ArticleContent.propsTypes = {
 class Post extends React.Component {
   render() {
     return (
-      <Layout>
+      <div>
         <ArticleContent>
           <Header />
           <Content />
@@ -137,15 +137,15 @@ class Post extends React.Component {
         <Tag />
         <Navigation />
         <Suggest >
-          <SuggestItem resizePadding={{padding: 0}}/>
-          <SuggestItem resizePadding={{padding: 0}}/>
-          <SuggestItem resizePadding={{padding: 0}}/>
-          <SuggestItem resizePadding={{padding: 0}}/>
+          <SuggestItem resizePadding={{ padding: 0 }} />
+          <SuggestItem resizePadding={{ padding: 0 }} />
+          <SuggestItem resizePadding={{ padding: 0 }} />
+          <SuggestItem resizePadding={{ padding: 0 }} />
         </Suggest>
         <ArticleContent>
           <FacebookComments />
         </ArticleContent>
-      </Layout>
+      </div>
     );
   }
 }
