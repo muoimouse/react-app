@@ -10,15 +10,15 @@ import Layout from './components/layout/App';
 class App extends Component {
   render() {
     return (
-      <Layout>
-        <Router>
+      <Router>
+        <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/post" component={Post} />
           </Switch>
-        </Router>
-      </Layout>
+        </Layout>
+      </Router>
     );
   }
 }

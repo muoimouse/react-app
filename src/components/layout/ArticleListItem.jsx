@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import { IMAGE_POST } from '../../constants/Style';
 
@@ -32,7 +33,7 @@ const ArticleListItem = ({
             </div>
             <p className="card-text mb-auto">This is a wider card with supporting text below as a natural
               lead-in to additional content.</p>
-            <i> <a href="./post">Continue reading</a> </i>
+            <i> <Link to="/post">Continue reading</Link> </i>
             <div className="entry-meta">
               <a href="" className="fa fa-user">{author}</a>
               <a href="" className="fa fa-folder-open">{articleCategory}</a>

@@ -1,22 +1,26 @@
 import { getApi } from '../utils/ApiUtils';
-import { FETCH_ARTICLE_REQUEST, FETCH_ARTICLE_SUCCESS, FETCH_ARTICLE_ERROR } from '../constants/ActionTypes';
+import { FETCH_ALL_ARTICLE_REQUEST, FETCH_ALL_ARTICLE_SUCCESS, FETCH_ALL_ARTICLE_ERROR } from '../constants/ActionTypes';
 
-export const getArticlesRequest = () => ({
-  type: FETCH_ARTICLE_REQUEST,
+export const getAllArticlesRequest = () => ({
+  type: FETCH_ALL_ARTICLE_REQUEST,
 });
 
-export const getArticlesSuccess = payload => ({
-  type: FETCH_ARTICLE_SUCCESS,
+export const getAllArticlesSuccess = payload => ({
+  type: FETCH_ALL_ARTICLE_SUCCESS,
   payload,
 });
 
 export const fetchArticleError = () => ({
-  type: FETCH_ARTICLE_ERROR,
+  type: FETCH_ALL_ARTICLE_ERROR,
 });
 
+// const shouldFetchArticle = (state) => {
+//   if (!)
+// }
+
 export const getArticleWithRedux = () => async (dispatch) => {
-  await dispatch(getArticlesRequest());
+  await dispatch(getAllArticlesRequest());
   const url = 'article';
   const results = await getApi(url);
-  return dispatch(getArticlesSuccess(results.data.data));
+  return dispatch(getAllArticlesSuccess(results.data.data));
 };
