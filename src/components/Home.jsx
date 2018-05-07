@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // import { Link } from 'react-router-dom';
-import Layout from '../layout/App';
-import ArticleList from '../../containers/ArticleListContainer';
+import Layout from './Layout';
+import ArticleList from '../containers/ArticleListContainer';
 
 const HomeContent = props => (
   <div className="col-sm-12">

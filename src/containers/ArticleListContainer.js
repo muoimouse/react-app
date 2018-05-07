@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import ArticleList from '../components/layout/ArticleList';
-import { getArticleWithRedux } from '../actions/ArticleListActions';
+import ArticleList from '../components/ArticleList';
+import { fetchAllArticleIfNeed } from '../actions/ArticleListActions';
 
 const propTypes = {
-  articleList: PropTypes.shape({}).isRequired,
+  articleList: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   isFetching: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
@@ -13,13 +13,13 @@ const propTypes = {
 class App extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
-    dispatch(getArticleWithRedux());
+    dispatch(fetchAllArticleIfNeed());
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { dispatch } = nextProps;
-    dispatch(getArticleWithRedux());
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   const { dispatch } = nextProps;
+  //   dispatch(getArticleWithRedux());
+  // }
 
   render() {
     const { articleList, isFetching } = this.props;
@@ -27,19 +27,31 @@ class App extends Component {
     return (
       <div>
         {
-          isEmpty ?
-          (isFetching ? <h2>Loading...</h2> : <h2>Empty</h2>)
-            :  <ArticleList articleList={articleList} />
+          isEmpty
+          ? (isFetching ? <h2>Loading...</h2> : <h2>Empty</h2>)
+          : <ArticleList articleList={articleList} />
         }
-
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  articleList: state.articleList.articleList,
-});
+const mapStateToProps = (state) => {
+  const { allArticleByPayload } = state;
+  const {
+    isFetching,
+    lastUpdated,
+    items: articleList,
+  } = allArticleByPayload.reactjs || {
+    isFetching: true,
+    items: [],
+  };
+  return {
+    articleList,
+    isFetching,
+    lastUpdated,
+  };
+};
 
 App.propTypes = propTypes;
 export default connect(mapStateToProps)(App);

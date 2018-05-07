@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { compileHash } from '../../utils/RouterUtils';
+import { compileHash } from '../utils/RouterUtils';
 
 const defaultProps = {
   className: '',

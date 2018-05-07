@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import { IMAGE_POST } from '../../constants/Style';
+import { IMAGE_POST } from '../constants/Style';
 
 const propTypes = {
   article: PropTypes.shape({}).isRequired,
