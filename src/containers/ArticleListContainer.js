@@ -16,11 +16,6 @@ class App extends Component {
     dispatch(fetchAllArticleIfNeed());
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   const { dispatch } = nextProps;
-  //   dispatch(getArticleWithRedux());
-  // }
-
   render() {
     const { articleList, isFetching } = this.props;
     const isEmpty = articleList.length === 0;
