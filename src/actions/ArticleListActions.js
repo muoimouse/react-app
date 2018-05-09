@@ -20,7 +20,10 @@ export const fetchAllArticle = payload => async (dispatch) => {
   await dispatch(fetchAllArticlesRequest(payload));
   const url = 'article';
   const results = await getApi(url);
-  return dispatch(fetchAllArticlesSuccess(payload, results.data.data));
+  if (results && results.data && results.data.data) {
+    return dispatch(fetchAllArticlesSuccess(payload, results.data.data));
+  }
+  return dispatch(fetchArticleError());
 };
 
 const shouldFetchAllArticle = (state, payload) => {
