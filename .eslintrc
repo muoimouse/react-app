@@ -1,7 +1,7 @@
 {
   "extends": "airbnb",
   "rules": {
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["windows", "linux"],
     "jsx-a11y/media-has-caption": 0,
     "react/no-danger": 0
   }

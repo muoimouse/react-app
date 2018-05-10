@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { IMAGE_POST } from '../constants/Style';
+import { BASE_FILE_URL } from '../constants/ApiConstants';
 
 const propTypes = {
   article: PropTypes.shape({}).isRequired,
@@ -13,7 +14,9 @@ const ArticleListItem = ({
 }) => {
   const {
     title,
+    keyword,
     author,
+    image,
     articleCategory,
     createdAt,
   } = article;
@@ -21,7 +24,7 @@ const ArticleListItem = ({
     <div className="card flex-md-row mb-1 box-shadow h-md-250">
       <div className="row">
         <div className="col-sm-4" style={IMAGE_POST}>
-          <img className="card-img-right flex-auto d-none d-lg-block" src="./img/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg" alt={title} />
+          <img className="card-img-right flex-auto d-none d-lg-block" src={`${BASE_FILE_URL}${image}`} alt={title} />
         </div>
         <div className="col-sm-8">
           <div className="card-body d-flex flex-column align-items-start">
@@ -33,7 +36,7 @@ const ArticleListItem = ({
             </div>
             <p className="card-text mb-auto">This is a wider card with supporting text below as a natural
               lead-in to additional content.</p>
-            <i> <Link to="/post">Continue reading</Link> </i>
+            <i> <Link to={keyword}>Continue reading</Link> </i>
             <div className="entry-meta">
               <a href="" className="fa fa-user">{author}</a>
               <a href="" className="fa fa-folder-open">{articleCategory}</a>

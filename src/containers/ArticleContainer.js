@@ -12,10 +12,9 @@ const propTypes = {
 
 class ArticleContainer extends Component {
   componentDidMount() {
-    const url = this.props.location;
-    console.log('query', url);
+    const pathName = this.props.location.pathname;
     const { dispatch } = this.props;
-    dispatch(fetchArticleIfNeed('5aebe2fe96534000264feed6'));
+    dispatch(fetchArticleIfNeed(pathName));
   }
 
   render() {

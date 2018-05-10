@@ -32,8 +32,6 @@ const article = (state = articleDefault, action) => {
 };
 
 const articleByPayload = (state = {}, action) => {
-  // console.log('state', state);
-  // console.log('action', action);
   switch (action.type) {
     case FETCH_ARTICLE_REQUEST:
     case FETCH_ARTICLE_SUCCESS:

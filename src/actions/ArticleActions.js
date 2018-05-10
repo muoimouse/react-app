@@ -17,7 +17,7 @@ export const fetchArticleError = () => ({
 
 export const fetchArticle = payload => async (dispatch) => {
   await dispatch(fetchArticleRequest());
-  const url = 'article/info';
+  const url = 'article';
   const query = {
     id: payload,
   };
